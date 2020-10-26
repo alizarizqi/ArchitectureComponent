@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <variable
+            name="kasir"
+            type="com.architecturecomponent.aliza.models.Kasir" />
+        <variable
+            name="viewModelPenjualan"
+            type="com.architecturecomponent.aliza.viewModel.viewModel" />
 
     </data>
 

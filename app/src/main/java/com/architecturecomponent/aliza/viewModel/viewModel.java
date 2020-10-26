@@ -29,7 +29,7 @@ public class viewModel extends ViewModel{
 //        kasir.setKembalian(String.valueOf(kembalian));
 //
 //    }
-    public void calculateTotal(int jumlahBuku, int harga) {
+    public void totalHarga(int jumlahBuku, int harga) {
     totalHargaMutableLiveData.setValue((double) jumlahBuku * (double) harga);
 }
 

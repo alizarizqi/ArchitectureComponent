@@ -1,5 +1,7 @@
 package com.architecturecomponent.aliza;
 
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -14,11 +16,13 @@ import android.view.ViewGroup;
 
 import com.architecturecomponent.aliza.databinding.DetailFragmentBinding;
 
+import com.architecturecomponent.aliza.models.Kasir;
 import com.architecturecomponent.aliza.viewModel.DetailViewModel;
+import com.architecturecomponent.aliza.viewModel.viewModel;
 
 public class DetailFragment extends Fragment {
 
-    private DetailViewModel mViewModel;
+    private viewModel vm;
     DetailFragmentBinding binding;
 
     public static DetailFragment newInstance() {
@@ -28,20 +32,25 @@ public class DetailFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        binding = DetailFragmentBinding.inflate(inflater, container, false);
-        View view = binding.getRoot();
-        binding.txtnama.setText(getArguments().getString("nama"));
-        binding.txtprovinsi.setText(getArguments().getString("jumlah"));
-        binding.txttelpRumah.setText(getArguments().getString("harga"));
-        binding.txthp.setText(getArguments().getString("total"));
-        binding.textView3.setText(getArguments().getString("metode"));
-        binding.txtbayar.setText(getArguments().getString("bayar"));
-        binding.textView10.setText(getArguments().getString("kembalian"));
-        binding.textView12.setText(getArguments().getString("bank"));
+        binding = DataBindingUtil.inflate(inflater, R.layout.detail_fragment, container, false);
+        vm = new ViewModelProvider(this).get(viewModel.class);
+        Kasir kasir =requireArguments().getParcelable("kasir");
+        binding.setViewModelPenjualan(vm);
+        binding.setLifecycleOwner(this);
+
+
+//        binding.txtnama.setText(getArguments().getString("nama"));
+//        binding.txtprovinsi.setText(getArguments().getString("jumlah"));
+//        binding.txttelpRumah.setText(getArguments().getString("harga"));
+//        binding.txthp.setText(getArguments().getString("total"));
+//        binding.textView3.setText(getArguments().getString("metode"));
+//        binding.txtbayar.setText(getArguments().getString("bayar"));
+//        binding.textView10.setText(getArguments().getString("kembalian"));
+//        binding.textView12.setText(getArguments().getString("bank"));
 
 
 
-        return view;
+        return binding.getRoot();
     }
 
 //    @Override

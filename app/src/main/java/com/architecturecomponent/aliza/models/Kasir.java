@@ -56,7 +56,7 @@ public class Kasir implements Parcelable {
             return total;
         }
 
-        public String  setTotal(String total) {
+        public String setTotal(String total) {
             return this.total = total;
         }
         public String getBayar() {
