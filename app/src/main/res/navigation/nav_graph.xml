@@ -9,7 +9,42 @@
         android:id="@+id/inputFragment"
         android:name="com.architecturecomponent.aliza.InputFragment"
         android:label="fragment_input"
-        tools:layout="@layout/fragment_input" />
+        tools:layout="@layout/fragment_input" >
+        <action
+            android:id="@+id/action_inputFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <argument
+            android:name="nama"
+            app:argType="string"
+            android:defaultValue="nama" />
+        <argument
+            android:name="jumlah"
+            android:defaultValue="jumlah" />
+        <argument
+            android:name="total"
+            app:argType="string"
+            android:defaultValue="total" />
+        <argument
+            android:name="metode"
+            app:argType="string"
+            android:defaultValue="metode" />
+        <argument
+            android:name="kembalian"
+            app:argType="string"
+            android:defaultValue="kembalian" />
+        <argument
+            android:name="bank"
+            app:argType="string"
+            android:defaultValue="bank" />
+        <argument
+            android:name="harga"
+            app:argType="string"
+            android:defaultValue="harga" />
+        <argument
+            android:name="bayar"
+            app:argType="string"
+            android:defaultValue="bayar" />
+    </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.architecturecomponent.aliza.DetailFragment"
